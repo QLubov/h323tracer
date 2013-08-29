@@ -1,0 +1,14 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\xmlreader.o
+./release\grqcommand.o
+./release\gcfcommand.o
+./release\commandfactory.o
+./release\logwindow.o
+./release\moc_mainwindow.o
+./release\moc_grqcommand.o
+./release\moc_gcfcommand.o
+./release\moc_command.o
+./release\moc_logwindow.o
+);

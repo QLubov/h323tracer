@@ -1,0 +1,14 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\xmlreader.o
+./debug\grqcommand.o
+./debug\gcfcommand.o
+./debug\commandfactory.o
+./debug\logwindow.o
+./debug\moc_mainwindow.o
+./debug\moc_grqcommand.o
+./debug\moc_gcfcommand.o
+./debug\moc_command.o
+./debug\moc_logwindow.o
+);
