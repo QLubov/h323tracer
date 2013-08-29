@@ -5,13 +5,13 @@ LogWindow::LogWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::LogWindow)
 {
-    connect(parent, SIGNAL(updateLogWindow(QString&)), this, SLOT(update(QString&)));
     ui->setupUi(this);
 }
 
 LogWindow::~LogWindow()
 {
     delete ui;
+    ui = 0;
 }
 void LogWindow::update(QString &Message)
 {
@@ -20,4 +20,9 @@ void LogWindow::update(QString &Message)
 void LogWindow::ClearLogs()
 {
     ui->textBrowser->clear();
+}
+LogWindow& LogWindow::Instance(QWidget *parent)
+{
+    static LogWindow inst(parent);
+    return inst;
 }

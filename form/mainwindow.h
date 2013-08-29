@@ -20,12 +20,12 @@ public:
     
 private:
     Ui::MainWindow *ui;
-    LogWindow *wnd;
+    //LogWindow *wnd;
     XMLReader xml;
     std::queue<Command*>* commands;
-    void openLogWindow();
-signals:
-    void updateLogWindow(QString&);
+    //void openLogWindow();
+/*signals:
+    void updateLogWindow(QString&);*/
 private slots:
     void startScenario();
     void stopScenario();

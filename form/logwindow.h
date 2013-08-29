@@ -9,16 +9,16 @@ class LogWindow;
 
 class LogWindow : public QMainWindow
 {
-    Q_OBJECT
-    
-public:
-    explicit LogWindow(QWidget *parent = 0);
+public:    
     ~LogWindow();
     void ClearLogs();
-private:
-    Ui::LogWindow *ui;
-private slots:
+    static LogWindow& Instance(QWidget *parent = 0);
     void update(QString&);
+private:
+    explicit LogWindow(QWidget *parent = 0);
+    //LogWindow(LogWindow&);
+
+    Ui::LogWindow *ui;
 };
 
 #endif // LOGWINDOW_H

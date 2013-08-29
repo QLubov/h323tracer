@@ -1,6 +1,6 @@
 #ifndef COMMAND_H
 #define COMMAND_H
-#include <logwindow.h>
+
 class Command
 {
     //Q_OBJECT

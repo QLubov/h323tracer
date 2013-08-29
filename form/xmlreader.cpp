@@ -1,5 +1,5 @@
 #include <xmlreader.h>
-//#include <logwindow.h>
+
 using namespace std;
 
 queue<Command*>* XMLReader::ReadFile(QFile *xmlFile)

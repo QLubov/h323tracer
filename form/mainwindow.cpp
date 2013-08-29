@@ -6,7 +6,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    wnd = 0;
+    //wnd = 0;
 }
 
 MainWindow::~MainWindow()
@@ -15,11 +15,11 @@ MainWindow::~MainWindow()
         delete wnd;*/
     delete ui;    
 }
-void MainWindow::openLogWindow()
+/*void MainWindow::openLogWindow()
 {
     wnd = new LogWindow(this);
     wnd->show();
-}
+}*/
 
 void MainWindow::startScenario()
 {
@@ -29,17 +29,22 @@ void MainWindow::startScenario()
     //cout<<size<<endl;
     if(size)
         ui->pushButton->setEnabled(false);
-    if(!wnd)
+    /*if(!wnd)
         openLogWindow();
     else
-        wnd->ClearLogs();
+        wnd->ClearLogs();*/
+
+    LogWindow& log = LogWindow::Instance(this);
+    log.ClearLogs();
+    log.show();
+
     for(int i = 0; i < size; i++)
     {
         Command* cmd = commands->front();
         cmd->execute();
         commands->pop();
         QString mes = "Execute  " + QString::number(i);
-        emit updateLogWindow(mes);
+        log.update(mes);
     }
 }
 void MainWindow::stopScenario()
